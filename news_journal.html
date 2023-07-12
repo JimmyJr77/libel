@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News Reports & Journal</title>
+    <!-- Cloudflare Link-->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- jQuery UI CSS Link-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- CSS Links-->     
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+    
+  <!-- main content elements-->
+  <body id="container">
+
+    <!-- header elements -->
+    <header>
+
+        <!-- title elements -->
+        <div id="color-spacer"> </div>
+        <div id="content-header">
+          
+          <section id="header-title">
+            <h2 id="libel-news">Libel News</h2>
+            <p id="tag-line"> Bringing you fake new from all your favorite "unbaised" sources</p>
+          </section>
+
+          <section id="search-title">
+            <div class="search-container">
+                <input type="text" id="search-term" placeholder="Search news here...">
+                <select id="news-categories">
+                  <option value="All Categories">All Categories</option>
+                  <option value="Arts">Arts</option>
+                  <option value="Business">Business</option>
+                  <option value="Politics">Politics</option>
+                  <option value="Religion">Religion</option>
+                  <option value="Science">Science</option>
+                  <option value="Sports">Sports</option>
+                  <option value="World">World</option>
+                </select>
+            </div>
+            <div class="search-container">
+                <input type="text" id="from" name="from" placeholder="From Date">
+                <input type="text" id="to" name="to" placeholder="To Date">
+                <button id="newsSearchButton">Search</button>
+            </div>
+          </section>
+          <div style="height:10px;"></div>
+        </div>
+        <div id="color-spacer2"> </div>
+       
+
+        
+    </header>
+    <!-- body elements-->
+    <nav id="content-main"></nav>
+    <ul class="navbar">
+      <li><a class = "navlink" href="index.html">Today's News</a></li>
+      <li><a class = "navlink" href="trending.html">Week Trending</a></li>
+      <li><a class = "navlink" href="news_journal.html">News Journal</a></li>
+      <li><a class = "navlink" href="news_api.html">News API</a></li>
+      <li><a class = "navlink" href="about_us.html">About Us</a></li>
+   </ul>
+
+   <div id="myModal" class="modal">
+    <div class="modal-content">
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
+    <main>
+        <div id="journal-container">
+            <div id="journal-news-results">
+                <h2 id="h2-category">Category</h2> <!-- This needs to change based on news category -->
+                <section id="news-results">
+                    <!-- NEWS RESULTS GET BUILT IN HERE -->
+                    <!-- Filter results based on search criteria -->
+                    <!-- Return fields for source, date, title, summary, author, category, and picture -->
+                    <!-- Use JS to populate the createNewsWidget() function with the above fields-->
+                </section>
+                <br><br>
+                <section id="no-results"> 
+                  <!-- No results found message -->
+                </section>
+            </div>
+            <div id="journal-entry">
+              <input type="text" id="user-topic" placeholder="Topic">
+              <button onclick="saveLibel()">Save</button>
+              <textarea id="user-libel" placeholder="Enter your libel-laced research here..."></textarea>
+              <div id="saved-data-container"></div>
+            </div>
+        </div>
+    </main>
+    <div style="height:150px"></div>
+
+    <!-- footer elements-->
+    <footer>
+        <p> ©2023 Team America Productions </p>
+    </footer>
+
+    <!-- This empty `<div>` will anchor the elements we create with jQuery. -->
+    <div class="m-5" id="root"></div>
+    <!-- jQuery Library Link-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- jQuery UI Library Link-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+     <!--DayJS Library Link-->
+     <script
+     src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+     crossorigin="anonymous">
+     </script>
+     <!-- Local JS Link-->    
+    <script type="text/javascript" src="./assets/javascript/script.js"></script>
+    <script>
+      $(document).ready(function() {
+        topNews30();
+      });
+    </script>
+  </body>
+  
+</html>
+
+  
